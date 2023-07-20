@@ -1,0 +1,48 @@
+{
+  "__version__": "1.0.4",
+  "custom_joint_texture_layouts": [],
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "ball"
+      },
+      {
+        "index": 2,
+        "name": "collider"
+      },
+      {
+        "index": 3,
+        "name": "lineGhost"
+      },
+      {
+        "index": 4,
+        "name": "star"
+      },
+      {
+        "index": 5,
+        "name": "lineGround"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 1,
+      "1": 60,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    }
+  },
+  "layer": [
+    {
+      "name": "BACKGROUND",
+      "value": 1
+    }
+  ],
+  "general": {
+    "designResolution": {
+      "fitHeight": true,
+      "fitWidth": false
+    }
+  }
+}
