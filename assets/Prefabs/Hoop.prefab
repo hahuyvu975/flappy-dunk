@@ -180,12 +180,12 @@
     "_restitution": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0.2,
-      "y": -14
+      "x": 0,
+      "y": -10
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 60,
+      "width": 80,
       "height": 0.5
     },
     "_id": ""
