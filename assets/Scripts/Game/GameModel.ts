@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, CCFloat } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCBoolean } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameModel')
@@ -16,9 +16,9 @@ export class GameModel extends Component {
     }
 
     @property({
-        type: Boolean
+        type: CCBoolean
     })
-    private isMovingGame: Boolean = false;
+    private isMovingGame: Boolean;
     public get IsMovingGame(): Boolean {
         return this.isMovingGame;
     }

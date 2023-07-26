@@ -23,17 +23,17 @@ export class BgGame extends Component {
     }
 
     protected update(dt: number): void {
-        if (this.gameModel.IsMovingGame) {
+        // if (this.gameModel.IsMovingGame) {
 
 
-            this.bgOffsetX += this.gameModel.SpeedObject * dt;
-            let offset: number = 0.0;
-            if (this.bgOffsetX > this.spriteWidth) {
-                offset = this.bgOffsetX - this.spriteWidth;
-                this.bgOffsetX = 0.0;
-            }
-            this.node.position = v3(this.bgStartPositionX - this.bgOffsetX - offset, this.node.position.y, this.node.position.z);
-        }
+        //     this.bgOffsetX += this.gameModel.SpeedObject * dt;
+        //     let offset: number = 0.0;
+        //     if (this.bgOffsetX > this.spriteWidth) {
+        //         offset = this.bgOffsetX - this.spriteWidth;
+        //         this.bgOffsetX = 0.0;
+        //     }
+        //     this.node.position = v3(this.bgStartPositionX - this.bgOffsetX - offset, this.node.position.y, this.node.position.z);
+        // }
     }
 }
 

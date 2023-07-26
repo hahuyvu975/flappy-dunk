@@ -7,8 +7,12 @@ export class Ball extends Component {
 
     private rigidBody: RigidBody2D;
 
+    protected start(): void {
+        this.rigidBody = this.node.getComponent(RigidBody2D);
+    }
+
     protected update(): void {
-        this.rigidBody.angularVelocity = 1;
+        this.rigidBody.angularVelocity = 3;
         this.node.getComponent(Collider2D).apply();
     }
 }

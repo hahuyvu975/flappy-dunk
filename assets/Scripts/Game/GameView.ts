@@ -1,23 +1,71 @@
-import { _decorator, Component, Node, Camera, view, v3 } from 'cc';
+import { _decorator, Component, Node, Camera, view, v3, director } from 'cc';
+
+import { ClickSheet } from './ClickSheet';
+import { GameController } from './GameController';
+import { UIResultGame } from './UIResultGame';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('GameView')
 export class GameView extends Component {
-    @property({type: Camera})
-    private camera : Camera;
 
-    private _width: number;
-    public get Width(): number {
-        return this._width;
+    @property({
+        type: Node
+    })
+    private x2PerfectScore: Node;
+    public get X2PerfectScore(): Node {
+        return this.x2PerfectScore;
+    }
+    public set X2PerfectScore(value: Node) {
+        this.x2PerfectScore = value;
+    }
+    
+    @property({
+        type: UIResultGame
+    })
+    private uiResultGamsScript: UIResultGame;
+    public get UIResultGamsScript(): UIResultGame {
+        return this.uiResultGamsScript;
+    }
+    public set UIResultGamsScript(value: UIResultGame) {
+        this.uiResultGamsScript = value;
     }
 
-    protected onLoad(): void {
-        const visibleSize = view.getVisibleSizeInPixel();
-        const aspect = visibleSize.width/visibleSize.height;
+    @property({
+        type: Node
+    })
+    private uiResultGameNode: Node;
+    public get UIResultGameNode(): Node {
+        return this.uiResultGameNode;
+    }
+    public set UIResultGameNode(value: Node) {
+        this.uiResultGameNode = value;
+    }
 
-        this._width = 2.0*this.camera.orthoHeight*aspect;
-        const cameraPosition = this.camera.node.position;
-        this.camera.node.position = v3(this._width/4.0, cameraPosition.y, cameraPosition.z);
+    @property({
+        type: Node
+    })
+    private clickSheetNode: Node;
+    public get ClickSheetNode(): Node {
+        return this.clickSheetNode;
+    }
+    public set ClickSheetNode(value: Node) {
+        this.clickSheetNode = value;
+    }
+
+    @property({
+        type: ClickSheet
+    })
+    private clickSheetScript: ClickSheet;
+    public get ClickSheetScript(): ClickSheet {
+        return this.clickSheetScript;
+    }
+    public set ClickSheetScript(value: ClickSheet) {
+        this.clickSheetScript = value;
+    }
+
+    protected onClickTryAgain(): void {
+        director.loadScene('Game');
     }
 }
 
